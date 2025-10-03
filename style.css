@@ -30,6 +30,7 @@ header {
     font-size: 24px;
     font-weight: 700;
     letter-spacing: -1px;
+    z-index: 1001;
 }
 
 nav {
@@ -55,11 +56,24 @@ nav a:hover {
 .menu-btn {
     width: 40px;
     height: 40px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     gap: 6px;
     cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 .menu-btn span {
@@ -79,16 +93,6 @@ nav a:hover {
     overflow: hidden;
 }
 
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-    z-index: 1;
-}
-
 .hero-image {
     position: absolute;
     top: 50%;
@@ -96,7 +100,7 @@ nav a:hover {
     transform: translate(-50%, -50%);
     width: 80%;
     height: 70%;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600"><rect fill="%23222" width="800" height="600"/><text x="400" y="300" font-family="Arial" font-size="40" fill="%23444" text-anchor="middle">HERO IMAGE</text></svg>');
+    background: linear-gradient(135deg, #222 0%, #111 100%);
     background-size: cover;
     background-position: center;
     opacity: 0.6;
@@ -470,16 +474,99 @@ footer {
         padding: 20px;
     }
 
-    nav a {
-        display: none;
+    .menu-btn {
+        display: flex;
     }
 
-    .about, .about2, .projects, .achievements {
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: right 0.4s ease;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav a {
+        font-size: 20px;
+        display: block;
+    }
+
+    .about, .about2, .projects, .achievements, .contact {
         padding: 80px 20px;
+    }
+
+    .about2-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-card {
+        height: 400px;
     }
 
     footer {
         padding: 60px 20px 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+    header {
+        padding: 20px 30px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    .about, .about2, .projects, .achievements {
+        padding: 100px 30px;
+    }
+
+    .about2-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
     }
 }
 
