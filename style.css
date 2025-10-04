@@ -3,7 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
@@ -12,7 +14,6 @@ body {
     line-height: 1.6;
 }
 
-/* Header */
 header {
     position: fixed;
     top: 0;
@@ -83,7 +84,6 @@ nav a:hover {
     transition: 0.3s;
 }
 
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -130,7 +130,6 @@ nav a:hover {
     opacity: 0.9;
 }
 
-/* About Section */
 .about {
     padding: 150px 60px;
     background: #000;
@@ -160,7 +159,6 @@ nav a:hover {
     line-height: 1.8;
 }
 
-/* about2 Section */
 .about2 {
     padding: 150px 60px;
     background: #0a0a0a;
@@ -193,7 +191,6 @@ nav a:hover {
     line-height: 1.8;
 }
 
-/* Projects Section */
 .projects {
     padding: 150px 60px;
     background: #000;
@@ -215,6 +212,10 @@ nav a:hover {
     background: #111;
 }
 
+.project-link {
+    color: #fff;
+}
+
 .project-card:hover .project-image {
     transform: scale(1.05);
 }
@@ -224,6 +225,8 @@ nav a:hover {
     height: 100%;
     background: linear-gradient(135deg, #222 0%, #111 100%);
     transition: transform 0.6s ease;
+    background-size: cover;
+    background-position: center;
 }
 
 .project-info {
@@ -249,7 +252,6 @@ nav a:hover {
     letter-spacing: 1px;
 }
 
-/* achievements Section */
 .achievements {
     padding: 150px 60px;
     background: #0a0a0a;
@@ -285,7 +287,6 @@ nav a:hover {
     line-height: 1.8;
 }
 
-/* Footer */
 footer {
     padding: 100px 60px 60px;
     background: #000;
@@ -367,7 +368,6 @@ footer {
     opacity: 0.6;
 }
 
-/* Contact Section */
 .contact {
     padding: 150px 60px;
     background: #000;
@@ -433,35 +433,27 @@ footer {
     opacity: 0.8;
 }
 
-
-/* Responsive */
 @media (max-width: 1024px) {
     header {
         padding: 20px 30px;
     }
-
     nav {
         gap: 20px;
     }
-
     .about, .about2, .projects, .achievements {
         padding: 100px 30px;
     }
-
     .about2-grid {
         grid-template-columns: 1fr;
         gap: 60px;
     }
-
     .projects-grid {
         grid-template-columns: 1fr;
     }
-
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .footer-bottom {
         flex-direction: column;
         gap: 20px;
@@ -473,11 +465,9 @@ footer {
     header {
         padding: 20px;
     }
-
     .menu-btn {
         display: flex;
     }
-
     nav {
         position: fixed;
         top: 0;
@@ -491,43 +481,34 @@ footer {
         gap: 40px;
         transition: right 0.4s ease;
     }
-
     nav.active {
         right: 0;
     }
-
     nav a {
         font-size: 20px;
         display: block;
     }
-
     .about, .about2, .projects, .achievements, .contact {
         padding: 80px 20px;
     }
-
     .about2-grid {
         grid-template-columns: 1fr;
         gap: 60px;
     }
-
     .projects-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
     .project-card {
         height: 400px;
     }
-
     footer {
         padding: 60px 20px 40px;
     }
-
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .footer-bottom {
         flex-direction: column;
         gap: 20px;
@@ -535,34 +516,27 @@ footer {
     }
 }
 
-/* Tablet */
 @media (max-width: 1024px) and (min-width: 769px) {
     header {
         padding: 20px 30px;
     }
-
     nav {
         gap: 20px;
     }
-
     .about, .about2, .projects, .achievements {
         padding: 100px 30px;
     }
-
     .about2-grid {
         grid-template-columns: 1fr;
         gap: 60px;
     }
-
     .projects-grid {
         grid-template-columns: 1fr;
     }
-
     .footer-content {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-
     .footer-bottom {
         flex-direction: column;
         gap: 20px;
@@ -570,13 +544,11 @@ footer {
     }
 }
 
-/* Scroll animations */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s ease forwards;
 }
-
 @keyframes fadeInUp {
     to {
         opacity: 1;
