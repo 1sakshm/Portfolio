@@ -9,17 +9,23 @@
 <body>
     <header>
         <div class="logo">SAKSHAM SHARMA</div>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
         <nav id="nav">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#achievements">Achievements</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="menu-btn" id="menuBtn">
+        <!-- <div class="menu-btn" id="menuBtn">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </div> -->
     </header>
 
     <section class="hero">
@@ -166,23 +172,6 @@
             <p>© 2025 Saksham Sharma. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const nav = document.getElementById('nav');
-        const navLinks = nav.querySelectorAll('a');
-
-        menuBtn.addEventListener('click', () => {
-            menuBtn.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuBtn.classList.remove('active');
-                nav.classList.remove('active');
-            });
-        });
-    </script>
+    
 </body>
 </html>
