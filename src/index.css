@@ -826,11 +826,78 @@ html.theme-glass .terminal-window {
 }
 
 @media (max-width: 700px) {
+  body {
+    padding: 12px;
+  }
+
+  .app-root {
+    min-height: calc(100vh - 24px);
+  }
+
+  .terminal-window {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    max-height: calc(100vh - 24px);
+    border-radius: 10px;
+  }
+
+  .titlebar {
+    padding: 12px 12px;
+  }
+
+  .titlebar-title {
+    font-size: 0.75rem;
+  }
+
+  .terminal-body {
+    padding: 18px 14px;
+  }
+
+  .ascii-name {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+  }
+
   .welcome-box {
     grid-template-columns: 1fr;
   }
   .welcome-left {
     border-right: none;
     border-bottom: 1px dashed var(--border-dashed);
+  }
+
+  .welcome-left {
+    padding: 16px;
+  }
+
+  .welcome-section {
+    padding: 14px 14px;
+  }
+
+  .portrait-img {
+    max-width: 260px;
+  }
+
+  .kv {
+    grid-template-columns: 120px 1fr;
+    column-gap: 12px;
+  }
+
+  .input-area {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 16px;
+  }
+  .kv {
+    grid-template-columns: 105px 1fr;
+  }
+  .titlebar-dot {
+    width: 11px;
+    height: 11px;
   }
 }
